@@ -1,0 +1,144 @@
+﻿<div class="page-shell">
+  <header class="nav-strip">
+    <div class="brand">{{ name }}</div>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Toggle navigation"
+      [attr.aria-expanded]="mobileMenuOpen"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav" [class.open]="mobileMenuOpen" aria-label="Main navigation">
+      @for (item of navItems; track item) {
+        <a [href]="getNavHref(item)" (click)="closeMenu()">{{ item }}</a>
+      }
+    </nav>
+  </header>
+
+  <main class="content">
+    <section class="hero panel" id="profile">
+      <div class="hero-copy">
+        <div class="status-pill">Available for internship</div>
+        <p class="eyebrow">{{ role }}</p>
+        <h1>Creative developer building digital experiences that work.</h1>
+        <p class="lead">{{ summary }}</p>
+
+        <div class="cta-row">
+          <a class="primary-btn" href="#contact">Hire Me</a>
+          <a class="secondary-btn" href="#skills">Explore Skills</a>
+        </div>
+
+        <div class="feature-row">
+          @for (feature of features; track feature) {
+            <span class="feature-chip">{{ feature }}</span>
+          }
+        </div>
+      </div>
+
+      <div class="profile-card" aria-label="Profile overview card">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+
+        <div class="profile-photo-wrap">
+          <img
+            class="profile-photo"
+            src="assets/profile-photo.jpg"
+            alt="Ali Asad"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+          />
+          <div class="avatar">AA</div>
+        </div>
+
+        <h2>{{ name }}</h2>
+        <p>{{ role }}</p>
+
+        <div class="mini-stats">
+          @for (stat of stats; track stat.label) {
+            <div>
+              <strong>{{ stat.value }}</strong>
+              <span>{{ stat.label }}</span>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="panel section-block">
+      <div class="section-heading">
+        <span>Work Experience</span>
+      </div>
+
+      <div class="card-grid">
+        @for (item of experiences; track item.title) {
+          <article class="info-card glow-card">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+          </article>
+        }
+      </div>
+    </section>
+
+    <section id="education" class="panel section-block">
+      <div class="section-heading">
+        <span>Education</span>
+      </div>
+
+      <div class="timeline">
+        @for (item of education; track item.title) {
+          <article class="timeline-item">
+            <div class="dot"></div>
+            <div>
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.institution }}</p>
+              <small>{{ item.period }}</small>
+            </div>
+          </article>
+        }
+      </div>
+    </section>
+
+    <section id="skills" class="panel section-block">
+      <div class="section-heading">
+        <span>Skills</span>
+      </div>
+
+      <div class="tag-list">
+        @for (skill of skills; track skill) {
+          <span class="tag">{{ skill }}</span>
+        }
+      </div>
+    </section>
+
+    <section id="certifications" class="panel section-block">
+      <div class="section-heading">
+        <span>Certifications</span>
+      </div>
+
+      <div class="cert-card glow-card">
+        @for (cert of certifications; track cert.title) {
+          <article>
+            <h3>{{ cert.title }}</h3>
+            <p class="cert-inst">{{ cert.institution }}</p>
+            <p>Completed: 13 May 2023</p>
+            <p>Grade: A</p>
+            <p>8-week course covering HTML, CSS, JavaScript, Bootstrap.</p>
+          </article>
+        }
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="connect-strip">
+    <p>Let's connect</p>
+    <div class="footer-links">
+      <a href="tel:03345493437">0334-5493437</a>
+      <a [href]="'mailto:' + email">{{ email }}</a>
+    </div>
+  </footer>
+</div>

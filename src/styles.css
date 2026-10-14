@@ -1,0 +1,45 @@
+:root {
+  --bg-dark: #07131f;
+  --bg-mid: #0f172a;
+  --panel: rgba(15, 23, 42, 0.7);
+  --line: rgba(148, 163, 184, 0.14);
+  --text: #edf6ff;
+  --muted: #c8d7ee;
+  --accent: #67e8f9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.18), transparent 28%),
+    var(--bg-dark);
+  color: var(--text);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
