@@ -76,7 +76,10 @@
 
       <div class="card-grid">
         @for (item of experiences; track item.title) {
-          <article class="info-card glow-card">
+          <article class="info-card glow-card experience-card">
+            @if (item.image) {
+              <img class="experience-image" [src]="item.image" [alt]="item.title + ' preview'" />
+            }
             <h3>{{ item.title }}</h3>
             <p>{{ item.description }}</p>
           </article>

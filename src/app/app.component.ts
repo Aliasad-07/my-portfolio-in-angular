@@ -48,11 +48,13 @@ export class AppComponent {
   experiences = [
     {
       title: 'Car Manufacturing Website',
-      description: 'Built a modern website for custom car orders and online spare-part sales.'
+      description: 'Built a modern website for custom car orders and online spare-part sales.',
+      image: 'assets/car-manufacturing-website.png'
     },
     {
       title: 'COVID-19 Info Website',
-      description: 'Designed a responsive site for vaccine details and basic patient information.'
+      description: 'Designed a responsive site for vaccine details and basic patient information.',
+      image: 'assets/covid19-info-website.png'
     }
   ];
 
