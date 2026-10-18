@@ -40,33 +40,6 @@
           }
         </div>
       </div>
-
-      <div class="profile-card" aria-label="Profile overview card">
-        <div class="orb orb-one"></div>
-        <div class="orb orb-two"></div>
-
-        <div class="profile-photo-wrap">
-          <img
-            class="profile-photo"
-            src="assets/profile-photo.jpg"
-            alt="Ali Asad"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
-          />
-          <div class="avatar">AA</div>
-        </div>
-
-        <h2>{{ name }}</h2>
-        <p>{{ role }}</p>
-
-        <div class="mini-stats">
-          @for (stat of stats; track stat.label) {
-            <div>
-              <strong>{{ stat.value }}</strong>
-              <span>{{ stat.label }}</span>
-            </div>
-          }
-        </div>
-      </div>
     </section>
 
     <section id="experience" class="panel section-block">
@@ -77,9 +50,15 @@
       <div class="card-grid">
         @for (item of experiences; track item.title) {
           <article class="info-card glow-card experience-card">
-            @if (item.image) {
-              <img class="experience-image" [src]="item.image" [alt]="item.title + ' preview'" />
-            }
+            <div class="experience-preview">
+              @if (item.image) {
+                <img class="experience-image" [src]="item.image" [alt]="item.title + ' preview'" />
+              }
+              <div class="preview-label">
+                <span class="preview-icon">◉</span>
+                <span>{{ item.title }} preview</span>
+              </div>
+            </div>
             <h3>{{ item.title }}</h3>
             <p>{{ item.description }}</p>
           </article>
